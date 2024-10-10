@@ -8,6 +8,9 @@ importers:
 
   .:
     dependencies:
+      echarts:
+        specifier: ^5.5.1
+        version: 5.5.1
       vue:
         specifier: ^3.4.29
         version: 3.5.11
@@ -436,6 +439,9 @@ packages:
     resolution: {integrity: sha1-rd6+rXKmV023g2OdyHoSF3OXOWE=, tarball: http://r.npm.sankuai.com/doctrine/download/doctrine-3.0.0.tgz}
     engines: {node: '>=6.0.0'}
 
+  echarts@5.5.1:
+    resolution: {integrity: sha1-jcnGjQxUiTS+3LX2M9sH7R3SEBw=, tarball: http://r.npm.sankuai.com/echarts/download/echarts-5.5.1.tgz}
+
   entities@4.5.0:
     resolution: {integrity: sha1-XSaOpecRPsdMTQM7eepaNaSI+0g=, tarball: http://r.npm.sankuai.com/entities/download/entities-4.5.0.tgz}
     engines: {node: '>=0.12'}
@@ -738,6 +744,9 @@ packages:
     resolution: {integrity: sha1-3F5pjL0HkmW8c+A3doGk5Og/YW4=, tarball: http://r.npm.sankuai.com/to-fast-properties/download/to-fast-properties-2.0.0.tgz}
     engines: {node: '>=4'}
 
+  tslib@2.3.0:
+    resolution: {integrity: sha1-gDuM2rPhK6WBpMpByIObuw2ssJ4=, tarball: http://r.npm.sankuai.com/tslib/download/tslib-2.3.0.tgz}
+
   type-check@0.4.0:
     resolution: {integrity: sha1-B7ggO/pwVsBlcFDjzNLDdzC6uPE=, tarball: http://r.npm.sankuai.com/type-check/download/type-check-0.4.0.tgz}
     engines: {node: '>= 0.8.0'}
@@ -816,6 +825,9 @@ packages:
   yocto-queue@0.1.0:
     resolution: {integrity: sha1-ApTrPe4FAo0x7hpfosVWpqrxChs=, tarball: http://r.npm.sankuai.com/yocto-queue/download/yocto-queue-0.1.0.tgz}
     engines: {node: '>=10'}
+
+  zrender@5.6.0:
+    resolution: {integrity: sha1-ATJbC7ODMt1eh6jb7nM2yvwPSls=, tarball: http://r.npm.sankuai.com/zrender/download/zrender-5.6.0.tgz}
 
 snapshots:
 
@@ -1126,6 +1138,11 @@ snapshots:
   doctrine@3.0.0:
     dependencies:
       esutils: 2.0.3
+
+  echarts@5.5.1:
+    dependencies:
+      tslib: 2.3.0
+      zrender: 5.6.0
 
   entities@4.5.0: {}
 
@@ -1473,6 +1490,8 @@ snapshots:
 
   to-fast-properties@2.0.0: {}
 
+  tslib@2.3.0: {}
+
   type-check@0.4.0:
     dependencies:
       prelude-ls: 1.2.1
@@ -1525,3 +1544,7 @@ snapshots:
   xml-name-validator@4.0.0: {}
 
   yocto-queue@0.1.0: {}
+
+  zrender@5.6.0:
+    dependencies:
+      tslib: 2.3.0

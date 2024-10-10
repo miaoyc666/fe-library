@@ -1,47 +1,45 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
-</script>
-
 <template>
-  <header>
-    <img alt="Vue logo" class="logo" src="./assets/logo.svg" width="125" height="125" />
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-    </div>
-  </header>
-
-  <main>
-    <TheWelcome />
-  </main>
+  <div class="header">
+    <h1>Welcome to My Library</h1>
+  </div>
+  <div>
+    <!-- 桑基图 -->
+    <Sankey :chartData="sankeyChartData"/>
+  </div>
 </template>
 
+<script setup>
+import Sankey from './components/charts/sankey.vue'
+import {ref} from "vue";
+
+const sankeyChartData = ref({
+  "data": [
+    { name: 'a' },
+    { name: 'b' },
+    { name: 'a1' },
+    { name: 'a2' },
+    { name: 'b1' },
+    { name: 'c' }
+  ],
+  "links": [
+    { source: 'a', target: 'a1', value: 10 },
+    { source: 'a', target: 'a2', value: 3 },
+    { source: 'b', target: 'b1', value: 3 },
+    { source: 'a', target: 'b1', value: 3 },
+    { source: 'b1', target: 'a1', value: 1 },
+    { source: 'b1', target: 'c', value: 2 }
+  ]
+})
+</script>
+
 <style scoped>
-header {
-  line-height: 1.5;
-}
-
-.logo {
-  display: block;
-  margin: 0 auto 2rem;
-}
-
-@media (min-width: 1024px) {
-  header {
-    display: flex;
-    place-items: center;
-    padding-right: calc(var(--section-gap) / 2);
-  }
-
-  .logo {
-    margin: 0 2rem 0 0;
-  }
-
-  header .wrapper {
-    display: flex;
-    place-items: flex-start;
-    flex-wrap: wrap;
-  }
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f0f0f0;
+  padding: 10px 0;
+  text-align: center;
 }
 </style>
