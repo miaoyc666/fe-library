@@ -1,5 +1,5 @@
 <template>
-  <div ref="echartSankey" style="width: 410px; height: 270px"/>
+  <div ref="echartSankey" style="width: 100%; height: 100%"/>
 </template>
 
 <script setup>
@@ -52,7 +52,11 @@ const setSankeyOptions = () => {
         focus: 'adjacency'
       },
       data: dataSankey.data,
-      links: dataSankey.links
+      links: dataSankey.links,
+      lineStyle: {
+        color: 'gradient',
+        curveness: 0.5
+      }
     }
   })
 }
