@@ -10,6 +10,9 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@antv/g": "^6.1.14",
+    "@antv/g2": "^5.2.10",
+    "@antv/g6": "5.0.37",
     "echarts": "^5.5.1",
     "vue": "^3.4.29"
   },
