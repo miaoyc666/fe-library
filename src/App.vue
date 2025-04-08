@@ -8,22 +8,27 @@
 
   <div class="container">
     <div class="charts-container">
-      <div class="chart-wrapper">
-        <!-- 桑基图 -->
-        <h4 style="margin-left: 30px; margin-top: 10px">桑基图</h4>
-        <Sankey :chartData="sankeyChartData"/>
-      </div>
+<!--      <div class="chart-wrapper">-->
+<!--        &lt;!&ndash; 桑基图 &ndash;&gt;-->
+<!--        <h4 style="margin-left: 30px; margin-top: 10px">桑基图</h4>-->
+<!--        <Sankey :chartData="sankeyChartData"/>-->
+<!--      </div>-->
 
-      <div class="chart-wrapper">
-        <!-- 柱形图 -->
-        <h4 style="margin-left: 30px; margin-top: 10px">柱形图</h4>
-        <Bar :chartData="barChartData"/>
-      </div>
+<!--      <div class="chart-wrapper">-->
+<!--        &lt;!&ndash; 柱形图 &ndash;&gt;-->
+<!--        <h4 style="margin-left: 30px; margin-top: 10px">柱形图</h4>-->
+<!--        <Bar :chartData="barChartData"/>-->
+<!--      </div>-->
 
-      <div class="chart-wrapper">
-        <!-- 饼图 -->
-        <h4 style="margin-left: 30px; margin-top: 10px">组织架构-g6</h4>
-        <div id="container"></div>
+<!--      <div class="chart-wrapper">-->
+<!--        &lt;!&ndash; 饼图 &ndash;&gt;-->
+<!--        <h4 style="margin-left: 30px; margin-top: 10px">组织架构-g6</h4>-->
+<!--        <div id="container"></div>-->
+<!--      </div>-->
+
+      <div class="card-container">
+        <!-- 使用个人信息卡片组件 -->
+        <ProfileCard :profile-data="userProfile"/>
       </div>
     </div>
   </div>
@@ -31,6 +36,7 @@
 </template>
 
 <script setup>
+import ProfileCard from '@/components/card/profile.vue'
 import Sankey from './components/charts/sankey.vue'
 import Bar from './components/charts/bar.vue'
 import {ref} from "vue";
@@ -38,6 +44,27 @@ import { onMounted } from "vue";
 import { Badge, BaseBehavior, ExtensionCategory, Graph, GraphEvent, Rect, register } from '@antv/g6';
 
 import { graphData } from './data.vue';
+
+// 准备个人信息数据
+const userProfile = ref({
+  avatar: "/path/to/avatar.jpg",
+  name: "张三",
+  wxName: "小张",
+  gender: "男",
+  age: 28,
+  phone: "13888888888",
+  email: "zhangsan@example.com",
+  idCard: "110101199001011234",
+  location: "北京市",
+  city: "北京市",
+  address: "北京市朝阳区xxx街道xxx号",
+  socialAccounts: [
+    { platform: "GitHub", name: "zhangsan" },
+    { platform: "微博", name: "张三的微博" },
+    { platform: "知乎", name: "张三说技术" }
+  ]
+})
+
 
 const statusColors = {
   online: '#17BEBB',
@@ -464,5 +491,11 @@ const barChartData = ref({
 h4 {
   margin-left: 30px;
   margin-top: 10px;
+}
+</style>
+
+<style scoped>
+.card-container {
+  padding: 20px;
 }
 </style>
